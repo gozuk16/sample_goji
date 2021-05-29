@@ -19,6 +19,6 @@ func hello(c web.C, w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	goji.Get("/hello/:name", hello)
-	goji.Get("/docs/*", http.FileServer(http.Dir(".")))
+	goji.Get("/assets/*", http.FileServer(http.Dir(".")))
 	goji.Serve()
 }
